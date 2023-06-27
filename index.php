@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Panneau d'administration</h1>
+      <p>Panneau d'administration</p>
     </div>
     <div class="menu">
         <form action="index.php"  method="POST">
