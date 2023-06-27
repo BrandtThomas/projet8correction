@@ -40,7 +40,7 @@
 
       <!-- Contenu de la page d'administration -->
       <?php 
-        if ((isset($_GET['page']) && $_GET['page'] == "connexion") || (empty($_SESSION))){ ?>
+        if ((isset($_GET['page']) && $_GET['page'] == "connexion") && (empty($_SESSION)) || (empty($_SESSION))){ ?>
         <div>
             <form action="index.php" class="formConnexion" method="POST">
                     <label for="identifiant">Identifiant</label>
@@ -126,6 +126,10 @@
                 <p class="alert success">Les données utilisateurs ont bien été mis à jour</p>
             <?php }
         }
+
+        if (isset($_GET['page']) && $_GET['page'] == 'connexion' && !empty($_SESSION)){ ?>
+                <p class="alert success">Bonjour <?php echo $_SESSION['data']['prenom']; ?>, vous êtes déjà connecté.</p>
+        <?php }
 
 
 
